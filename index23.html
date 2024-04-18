@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Пример работы с пользователем</title>
+    </head>
+    <body>
+        Введите слово. <br>
+        <script>
+            where=window.prompt("Куда заглянем сегодня?");
+            switch(where) {
+                case "ВКонтакте":window.location = "https://vk.com/";
+                break;
+                case "ТикТок":window.location = "https://tictiok.com/";
+                break;
+                case "Фейсбук":window.location = "https://facebook.com/";
+                break;
+                case "Инстаграм":window.location = "https://instagram.com/";
+                break;
+                case "Твиттер":window.location = "https://twitter.com/";
+                break;
+                default:window.location = "https://itiu.bsu.by/"
+            }
+        </script>
+    </body>
+</html>
