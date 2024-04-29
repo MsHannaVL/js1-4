@@ -5,17 +5,21 @@
     </head>
     <body>
         <script>
-            let n=prompt("Введите число n: ");
-            let z=1;
-            if (n>1) {
-                let i=2;
-                    do {
-                        z=z*i;
-                        i++;
+            let n = prompt('Введите число n: ').replace(/\s+/g, '');
+                while (!Number.isInteger(+n) || n > 100|| n.length == 0 || +n < 0) {
+                    alert('Неверный формат введенного значения.\nВы ввели либо слишком большое число, либо отрицательное число, либо это не число.\nДавайте попробуем еще раз!')
+                    n = prompt('Введите число меньше 100.\nn:', '').replace(/\s+/g, '');
                     }
-                    while (i<=n);
+            let z = 1; 
+            if(n > 1) {
+                let i = 2;
+                do {
+                z = z * i;
+                i ++;
+                }
+                while (i <= +n);
             }
-            alert("Факотриал числа '+n+' равно " + z);
+            alert(`Факториал числа ${n} равен ${z}`);
         </script>
     </body>
 </html>
