@@ -5,15 +5,20 @@
     </head>
     <body>
         <script>
-            let x=prompt("Введите число x: ");
-            let y=prompt("Введите число y: ");
-            let z=+x;
-            i=2;
-            while (i<=y) {
-                z=z*x;
-                i++;
-            }
-            alert("Число '+x+' в степени '+y+' равно" + z);
+            let x = prompt('Введите число x: ').replace(/\s+/g, '');
+                while (isNaN(+x) || x.length > 10|| x.length == 0) {
+                alert('Неверный формат введенного значения.\nВы ввели либо слишком длинное число, либо это не число.\nДавайте попробуем еще раз!')
+                x = prompt('Введите число x', '').replace(/\s+/g, '');
+                }
+            let y = prompt('Введите число y: ').replace(/\s+/g, '');
+                while (isNaN(+y) || y.length > 10 || y.length == 0) {
+                alert('Неверный формат введенного значения.\nВы ввели либо слишком длинное число, либо это не число.\nДавайте попробуем еще раз!')
+                y = prompt('Введите число y', '').replace(/\s+/g, '');
+                }
+            let z = Math.pow(x, y);
+                if(z == NaN || !isFinite(z))
+                alert(`Число ${x}  в степени ${y} невозможно вычислить `);
+                else alert(`Число ${x}  в степени ${y} равно ${z}`);
         </script>
     </body>
 </html>
